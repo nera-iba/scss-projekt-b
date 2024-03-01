@@ -78,7 +78,7 @@ nav {
 }
 
 .toggleShow{
-    display: flex;
+    display: flex !important;
     flex-direction: column;
 }
 
@@ -322,4 +322,75 @@ footer:nth-of-type(2){
         p{
             color: partial.$bg-color;
         }
+}
+
+
+/********---Mobil---*********/
+@media screen and (max-width: 900px){
+header:nth-of-type(1){
+    display: inline; //Gør at elementet kun fylder den plads den skal bruge
+}
+
+.mobile-nav{
+    color: partial.$primary-color;
+
+        .bars{
+            display: flex;
+        }
+}
+
+.desktop-nav{
+    display: none;
+    height: auto;
+    border-top: 4px solid partial.$primary-color;
+
+        ul{
+            flex-direction: column;
+        }
+
+        li{
+            display: flex;
+        }
+}
+
+.header-img{
+
+    .banner-tekst{
+        left: 5%;
+        top: 15%;
+    }
+
+    h1{
+        font-size: 5vw;
+    }
+
+    p{
+        font-size: 4vw;
+    }
+
+    .bg-billede-desktop{
+        display: none;
+    }
+
+    .bg-billede-mobil{
+        display: initial;
+    }
+}
+
+main{
+    .cta-wrapper{
+        flex-direction: column;
+    }
+}
+
+.cta-1, .cta-2, .cta-3{
+    @include partial.cta-box($width: 80%);
+
+    img{
+        width: 50%;
+    }
+}
+
+
+
 }
